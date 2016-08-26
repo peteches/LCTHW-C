@@ -1,6 +1,11 @@
 CFLAGS=-Wall -g
 
-all: clean ex1
+ex=$(shell basename ${PWD})
+
+all: clean build
+
+build:
+	cc ${ex}.c -o ${ex}
 
 clean:
-	rm -f ex1
+	rm -f ${ex}
