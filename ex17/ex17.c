@@ -119,6 +119,7 @@ void Database_set(struct Connection *conn, int id, const char *name,
     // WARNING: bug, read the "How To Break It" and fix this
     char *res = strncpy(addr->name, name, MAX_DATA);
     // demonstrate the strncpy bug
+    addr->name[MAX_DATA - 1] = '\0';
     if (!res)
         die("Name copy failed");
 
