@@ -1,6 +1,8 @@
 CFLAGS=-Wall -g
 
-all: clean ex1
+e = $(patsubst %.c,%,$(wildcard *.c))
+
+build: $(e)
 
 clean:
-	rm -f ex1
+	rm -rf ex[0-9][0-9] ex[0-9] ex*.dSYM
